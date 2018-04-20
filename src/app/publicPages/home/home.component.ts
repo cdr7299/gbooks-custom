@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   public books: any = [];
   public flag = false;
-  private queryParameter: string;
+  public queryParameter: string;
   public selectedBook: any;
   ngOnInit() {
     // this.onClickMe();
