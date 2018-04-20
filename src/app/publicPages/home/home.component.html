@@ -1,0 +1,35 @@
+<div id="maincontent">
+
+  <div class="searchbox">
+    <!-- <div> -->
+      <h2 style="text-align: center;"> Find Books using Google books </h2><br>
+    <!-- </div> -->
+   
+  <div style="display:inline">
+      <input type="text" id="query"  [(ngModel)] = "queryParameter" (keyup) = "onKey($event)">
+      <!-- <input type="text" id="query"  [(ngModel)] = "queryParameter"> -->
+      <select [(ngModel)]="queryBy" class="form-control" id="filter" (change) = "onKey($event)">
+        <!-- <option value="$"></option> -->
+        <option value="0">Books</option>
+        <option value="1">Authors</option>
+        <!-- <option value="designation">DESIGNATION</option> -->
+    </select>  
+      <button (click) = "getList()" class= "btn btn-primary" id="getList" [disabled] = "(queryParameter) == null">Search</button>  
+  </div>
+    <div id="suggest" *ngIf="flag">
+      <ul class="bookList">
+        <li *ngFor="let volume of books" id="suggestList">
+            <a routerLink="/bookDetail/{{volume.id}}">
+          <span><strong>{{volume.volumeInfo.title}}</strong></span> by <span>{{volume.volumeInfo.authors}}</span> 
+              </a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>

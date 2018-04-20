@@ -1,0 +1,27 @@
+<div class="container">
+  <section class="col-xs-12 col-sm-6 col-md-12">
+    <article class="search-result row" *ngFor="let volume of data.items">
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <img style="margin-top:50px;" [src]="volume.volumeInfo.imageLinks != null ? volume.volumeInfo.imageLinks.thumbnail : null"
+          alt="Image Not available" />
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-9 excerpet customCard" style="min-height: 150px; margin-top:15px; padding:25px;">
+        <h3  style="">
+            <a routerLink="/bookDetail/{{volume.id}}">{{volume.volumeInfo.title}}</a> <span style ="font-size:20px; font-weight: 300;">  by {{volume.volumeInfo.authors}}</span>
+          
+          <!-- <a router title="">{{volume.volumeInfo.title}}</a> -->
+        </h3>
+        <!-- <p>{{volume.volumeInfo.description}}</p>						 -->
+        <div [innerHtml]="volume.volumeInfo.description?volume.volumeInfo.description: 'Sorry, No description Available'"></div>
+
+        <span class="plus">
+          <a href="#" title="Lorem ipsum">
+            <i class="glyphicon glyphicon-plus"></i>
+          </a>
+        </span>
+      </div>
+      <span class="clearfix borda"></span>
+    </article>
+
+  </section>
+</div>

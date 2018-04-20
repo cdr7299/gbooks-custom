@@ -1,0 +1,26 @@
+<div *ngIf="selectedBook">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <img class="img-fluid" [src]="selectedBook.volumeInfo.imageLinks.thumbnail" alt="sa" style="margin-top:80px;">
+
+      </div>
+      <div class="col-sm-8 customCard">
+        <div>
+        <h2>{{ selectedBook.volumeInfo.title | uppercase }}  </h2>
+        <p> Rating  {{ selectedBook.volumeInfo.averageRating?selectedBook.volumeInfo.averageRating: '-'}} / 5</p>
+      </div>
+        <div>
+          <span>Authors : {{selectedBook.volumeInfo.authors}}</span>
+        </div>
+        <!-- <div styleQ="display:inline-block"> -->
+        <div [innerHtml]="selectedBook.volumeInfo.description?selectedBook.volumeInfo.description: 'Sorry, No description Available'"></div>
+        <!-- </div> -->
+        <button (click)="goBack()">go back</button>
+
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+</div>

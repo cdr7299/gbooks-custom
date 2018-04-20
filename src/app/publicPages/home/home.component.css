@@ -1,0 +1,73 @@
+
+
+.searchbox{
+  position: absolute;
+  margin: auto;
+  top: -500px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 100px;
+  /* background-color: #ccc; */
+}
+
+#query {
+    width: 500px;
+    /* border-radius: 2px; */
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+    cursor: default;
+    font-size: 14px;
+    font-weight: bold;
+    /* width: 100px; */
+    padding: 0 16px;
+    height:40px;
+  border-radius: 6px;
+    
+}
+
+#suggest{
+  background: #f2f2f2;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  padding:8px;
+  border-radius: 6px;
+
+}
+
+.bookList{
+
+  list-style-type: none;
+}
+
+
+
+/* When the input field gets focus, change its width to 100% */
+#suggest:focus {
+  height: 100%;
+}
+
+#getList{
+
+  position: absolute;
+  right:0;
+  margin-top:-40px;
+  height:40px;
+}
+
+#suggestList{
+
+  border-bottom: 1px solid black;
+  margin-left: -35px;
+}
+
+#filter{
+
+  right: 72px;
+  width: 120px;
+  position: absolute;
+  margin-top: -40px;
+  height: 40px;
+}
